@@ -1,0 +1,8 @@
+name: DBotPlusMC
+version: '${project.version}'
+main: org.rammex.dbotplusmc.DBotPlusMC
+api-version: '1.20'
+commands:
+  dbotreload:
+    description: Reloads the plugin
+    permission: dbotplusmc.reload
