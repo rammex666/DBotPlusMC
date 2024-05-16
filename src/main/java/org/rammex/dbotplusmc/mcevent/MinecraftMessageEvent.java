@@ -13,7 +13,7 @@ public class MinecraftMessageEvent implements Listener {
     @EventHandler
     public void onMessageReceived(org.bukkit.event.player.AsyncPlayerChatEvent event) {
         if (this.plugin.getConfig().getBoolean("discord.discordchat.active")){
-            this.plugin.getJda().getTextChannelById(this.plugin.getConfig().getString("discord.discordchat.channelid")).sendMessage("§9[§cMinecraft§7] §r" + event.getPlayer().getName() + "§7: §r" + event.getMessage()).queue();
+            this.plugin.getJda().getTextChannelById(this.plugin.getConfig().getString("discord.discordchat.channelid")).sendMessage("[Minecraft] " + event.getPlayer().getName() + " " + event.getMessage()).queue();
         }
     }
 }
