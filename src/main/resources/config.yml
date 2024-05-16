@@ -5,11 +5,14 @@ discord:
     active: true
     # The command to execute when boosting the server
     command: "YOUR_COMMAND"
+    # Your server ID
+    serverid: ""
   minecraftchat:
     active: true
     # Send a message on discord when a player send a message in the minecraft chat
-    channelID: "YOUR_CHANNEL"
+    channelID: ""
   discordchat:
     # Send a message in the minecraft chat when a player send a message in the discord chat
     active: true
+    channelID: ""
 
