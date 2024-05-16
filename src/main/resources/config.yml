@@ -15,4 +15,10 @@ discord:
     # Send a message in the minecraft chat when a player send a message in the discord chat
     active: true
     channelID: ""
+  commands:
+    # send a message on a specific channel when you execute a command on minecraft
+    # exemple : /dbplus annonce "%player% vien de miner de voter pour le serveur !"
+    # annonce:
+      # channelID: ""
+      # message: "%player% vien de miner de voter pour le serveur !"
 

@@ -21,6 +21,7 @@ public final class DBotPlusMC extends JavaPlugin {
     public void onEnable() {
         startBot();
         this.getLogger().info("[DBotPlusMC] Plugin activé !");
+        this.getLogger().info("[DBotPlusMC] Plugin créé par .rammex");
         saveDefaultConfig();
 
         this.getCommand("dbotreload").setExecutor(new ReloadCommand(this));
