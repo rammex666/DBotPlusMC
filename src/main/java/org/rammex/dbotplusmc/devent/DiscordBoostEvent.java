@@ -15,7 +15,6 @@ public class DiscordBoostEvent extends ListenerAdapter {
     public void onGuildMemberUpdateBoostTime(GuildMemberUpdateBoostTimeEvent event) {
         if(this.plugin.getConfig().getBoolean("discord.boostmodule.active")){
             if (event.getGuild().getId().equals(this.plugin.getConfig().getString("discord.boostmodule.serverid"))) {
-                this.plugin.getServer().broadcastMessage(event.getMember().getUser().getName() + " a boosté le serveur !");
                 String command = this.plugin.getConfig().getString("discord.boostmodule.command");
                 Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), command);
             }

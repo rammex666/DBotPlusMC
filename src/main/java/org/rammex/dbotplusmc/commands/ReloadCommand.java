@@ -18,7 +18,7 @@ public class ReloadCommand implements CommandExecutor {
         if (commandSender.hasPermission("dbotplusmc.reload")) {
             plugin.reloadConfig();
             this.plugin.startBot();
-            commandSender.sendMessage("§a[DBotPlusMC] Configuration + Bot rechargée !");
+            commandSender.sendMessage("§a[DBotPlusMC] Config + Bot reloaded!");
             return true;
         }
         return false;

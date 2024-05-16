@@ -1,6 +1,7 @@
 discord:
   token: ""
   activity: "YOUR_ACTIVITY"
+  guildid: ""
   boostmodule:
     active: true
     # The command to execute when boosting the server

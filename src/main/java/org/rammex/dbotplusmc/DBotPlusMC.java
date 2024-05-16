@@ -20,18 +20,22 @@ public final class DBotPlusMC extends JavaPlugin {
     @Override
     public void onEnable() {
         startBot();
-        this.getLogger().info("[DBotPlusMC] Plugin activé !");
-        this.getLogger().info("[DBotPlusMC] Plugin créé par .rammex");
+        this.getLogger().info("[DBotPlusMC] Plugin on !");
+        this.getLogger().info("[DBotPlusMC] Plugin by .rammex");
         saveDefaultConfig();
 
         this.getCommand("dbotreload").setExecutor(new ReloadCommand(this));
         this.getServer().getPluginManager().registerEvents(new MinecraftMessageEvent(this), this);
+        this.jda.addEventListener(new DiscordMessageEvent(this));
+        this.jda.addEventListener(new DiscordBoostEvent(this));
 
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        if (jda != null) {
+            jda.shutdown();
+        }
     }
 
     public void startBot(){
@@ -49,12 +53,10 @@ public final class DBotPlusMC extends JavaPlugin {
             jda = JDABuilder.createDefault(token)
                     .enableIntents(GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS)
                     .setActivity(Activity.playing(activity))
-                    .addEventListeners(new DiscordMessageEvent(this))
-                    .addEventListeners(new DiscordBoostEvent(this))
                     .build();
 
 
-            System.out.println("Bot en ligne !");
+            System.out.println("Bot on !");
         } catch (Exception e) {
             e.printStackTrace();
 
