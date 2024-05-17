@@ -1,8 +1,11 @@
 name: DBotPlusMC
-version: '1.0'
+version: '${project.version}'
 main: org.rammex.dbotplusmc.DBotPlusMC
 api-version: '1.20'
 commands:
   dbotreload:
     description: Reloads the plugin
     permission: dbotplusmc.reload
+  dbplus:
+    description: Execute a command on discord
+    permission: dbotplusmc.execute

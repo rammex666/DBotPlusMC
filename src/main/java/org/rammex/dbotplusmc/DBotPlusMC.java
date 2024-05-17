@@ -31,6 +31,9 @@ public final class DBotPlusMC extends JavaPlugin {
         this.jda.addEventListener(new DiscordMessageEvent(this));
         this.jda.addEventListener(new DiscordBoostEvent(this));
 
+        int pluginId = 21957;
+        Metrics metrics = new Metrics(this, pluginId);
+
     }
 
     @Override
