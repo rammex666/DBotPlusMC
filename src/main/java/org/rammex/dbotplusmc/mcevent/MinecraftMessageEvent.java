@@ -23,7 +23,7 @@ public class MinecraftMessageEvent implements Listener {
                     if (guild != null) {
                         TextChannel channel = guild.getTextChannelById(channelId);
                         if (channel != null) {
-                            channel.sendMessage("[Minecraft] " + event.getPlayer().getName() + " -> " + event.getMessage()).queue();
+                            channel.sendMessage("**[Minecraft]** *" + event.getPlayer().getName() + "* -> " + event.getMessage()).queue();
                         } else {
                             System.out.println("Le salon avec l'ID " + channelId + " n'existe pas ou n'est pas accessible.");
                         }
@@ -35,7 +35,7 @@ public class MinecraftMessageEvent implements Listener {
                 }
             }
         } catch (Exception e) {
-            // Vous pouvez choisir de ne rien faire ici, ce qui empêchera l'erreur d'être affichée dans la console
+
         }
     }
 }

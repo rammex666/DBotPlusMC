@@ -1,3 +1,14 @@
+#------------------------------------------------------------
+# This is the main configuration file of the plugin
+# The plugin will not work if you don't fill the token and the guildid
+# The activity is the text that will be displayed on the bot status
+# The boostmodule is a module that will execute a command when someone boost the server
+# The minecraftchat is a module that will send a message on discord when a player send a message in the minecraft chat
+# The discordchat is a module that will send a message in the minecraft chat when a player send a message in the discord chat
+# The commands is a module that will send a message on a specific channel when you execute a command on minecraft
+# The channelID is the ID of the channel where the message will be sent
+#------------------------------------------------------------
+
 discord:
   token: ""
   activity: "YOUR_ACTIVITY"
@@ -6,8 +17,6 @@ discord:
     active: true
     # The command to execute when boosting the server
     command: "YOUR_COMMAND"
-    # Your server ID
-    serverid: ""
   minecraftchat:
     active: true
     # Send a message on discord when a player send a message in the minecraft chat
@@ -18,7 +27,9 @@ discord:
     channelID: ""
   commands:
     # send a message on a specific channel when you execute a command on minecraft
-    # exemple : /dbplus annonce "%player% vien de miner de voter pour le serveur !"
+    # exemple : /dbplus annonce
+    # exemple : /dbplus annonce Rammex
+    # placeholder : %player% = player name
     # annonce:
       # channelID: ""
       # message: "%player% vien de miner de voter pour le serveur !"

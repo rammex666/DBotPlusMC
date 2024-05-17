@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.entities.Activity;
 
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.rammex.dbotplusmc.commands.DBPlusCommand;
 import org.rammex.dbotplusmc.commands.ReloadCommand;
 
 import org.rammex.dbotplusmc.devent.DiscordBoostEvent;
@@ -25,6 +26,7 @@ public final class DBotPlusMC extends JavaPlugin {
         saveDefaultConfig();
 
         this.getCommand("dbotreload").setExecutor(new ReloadCommand(this));
+        this.getCommand("dbplus").setExecutor(new DBPlusCommand(this));
         this.getServer().getPluginManager().registerEvents(new MinecraftMessageEvent(this), this);
         this.jda.addEventListener(new DiscordMessageEvent(this));
         this.jda.addEventListener(new DiscordBoostEvent(this));

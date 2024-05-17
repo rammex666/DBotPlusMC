@@ -14,10 +14,12 @@ public class DiscordBoostEvent extends ListenerAdapter {
     @Override
     public void onGuildMemberUpdateBoostTime(GuildMemberUpdateBoostTimeEvent event) {
         if(this.plugin.getConfig().getBoolean("discord.boostmodule.active")){
-            if (event.getGuild().getId().equals(this.plugin.getConfig().getString("discord.boostmodule.serverid"))) {
-                String command = this.plugin.getConfig().getString("discord.boostmodule.command");
-                Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(), command);
-            }
+            String receivedGuildId = event.getGuild().getId();
+                String configuredChannelId = this.plugin.getConfig().getString("discord.guildid");
+                if(receivedGuildId.equals(configuredChannelId)){
+                    String command = this.plugin.getConfig().getString("discord.boostmodule.command");
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
+                }
         }
     }
 }

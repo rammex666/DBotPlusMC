@@ -16,20 +16,12 @@ public class DiscordMessageEvent extends ListenerAdapter {
         if (event.getAuthor().isBot()){
             return;
         }
-        this.plugin.getLogger().info("[DBotPlusMC] Message received on Discord");
-        this.plugin.getServer().broadcastMessage("Test message");
         if (this.plugin.getConfig().getBoolean("discord.discordchat.active")){
             String receivedChannelId = event.getChannel().getId();
-            String configuredChannelId = this.plugin.getConfig().getString("discord.discordchat.channelid");
-            this.plugin.getLogger().info("[DBotPlusMC] Received channel ID: " + receivedChannelId);
-            this.plugin.getLogger().info("[DBotPlusMC] Configured channel ID: " + configuredChannelId);
+            String configuredChannelId = this.plugin.getConfig().getString("discord.discordchat.channelID");
             if(receivedChannelId.equals(configuredChannelId)){
-                this.plugin.getServer().broadcastMessage("§9[§cDiscord§7] §r" + event.getAuthor().getName() + "§7: §r" + event.getMessage().getContentDisplay());
-            } else {
-                this.plugin.getLogger().info("[DBotPlusMC] Message received in a different channel");
+                this.plugin.getServer().broadcastMessage("§1§l[§9Discord§1§l] §r" + event.getAuthor().getName() + "§7 -> §r" + event.getMessage().getContentDisplay());
             }
-        } else {
-            this.plugin.getLogger().info("[DBotPlusMC] Discord chat is not active");
         }
     }
 }

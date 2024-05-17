@@ -6,3 +6,6 @@ commands:
   dbotreload:
     description: Reloads the plugin
     permission: dbotplusmc.reload
+  dbplus:
+    description: Execute a command on discord
+    permission: dbotplusmc.execute
